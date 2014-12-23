@@ -2064,18 +2064,27 @@ SockJS Task Scheduler:: stats from thread pool of the SockJS task scheduler whic
     STOMP level the SockJS heartbeats are disabled.
 
 [[websocket-stomp-testing]]
-==== Testing Annotated Controller Methods
+==== 测试带注解的控制器方法 Testing Annotated Controller Methods
+
+有两个主要的方法来测试使用Spring STOMP来提供WebSocket支持的应用.
+第一个就是写一个服务器端的测试来验证控制器的函数和那些注解的消息处理方法.
+第二个是写一个完整的端到端的测试包含了运行的客户端和服务器端
 
 There are two main approaches to testing applications using Spring's STOMP over
 WebSocket support. The first is to write server-side tests verifying the functionality
 of controllers and their annotated message handling methods. The second is to write
 full end-to-end tests that involve running a client and a server.
 
+这两种方式并不是相互的独立的.相反在一个完成的测试策略里面他们各司其职.
+服务器端的测试更受到关注也更容易编写和维护.端到端的集成测试从另一个方便
+讲更加的完成和测试更多的地方但是它们同样更多的包含编写测试和维护.
+
 The two approaches are not mutually exclusive. On the contrary each has a place
 in an overall test strategy. Server-side tests are more focused and easier to write
 and maintain. End-to-end integration tests on the other hand are more complete and
 test much more but they're also more involved to write and maintain.
 
+服务器端测试最简单的形式是写一个控制器单元测试.
 The simplest form of server-side tests is to write controller unit tests. However
 this is not useful enough since much of what a controller does depends on its
 annotations. Pure unit tests simply can't test that.
