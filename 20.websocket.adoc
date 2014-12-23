@@ -2095,9 +2095,14 @@ framework. i.e. without running a Servlet container but relying on the Spring Fr
 to invoke the annotated controllers. Just like with Spring MVC Test here there are two
 two possible alternatives, either using a "context-based" or "standalone" setup:
 
+1.使用spring testContext framework 来帮助加载现行的spring配置文件,
+注入"clientInboundChannel"作为一个试验田,使用它来发送被控制器方法处理的消息
+
 1. Load the actual Spring configuration with the help of the
 Spring TestContext framework, inject "clientInboundChannel" as a test field, and
 use it to send messages to be handled by controller methods.
+
+
 
 2. Manually set up the minimum Spring framework infrastructure required to invoke
 controllers (namely the `SimpAnnotationMethodMessageHandler`) and pass messages for
