@@ -80,6 +80,7 @@ Aside from short-to-midterm adoption challenges, using WebSocket
 brings up important design considerations that are important to recognize
 early on, especially in contrast to what we know about building web applications today.
 
+
 Today REST is a widely accepted, understood, and supported
 architecture for building web applications. It is an architecture that relies
 on having many URLs (__nouns__), a handful of HTTP methods (__verbs__), and
