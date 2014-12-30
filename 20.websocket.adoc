@@ -179,7 +179,8 @@ WebSocket clients or to a specific user.
 
 [[websocket-server]]
 === WebSocket API
-The Spring Framework provides a WebSocket API designed to adapt to various WebSocket engines.
+Spring Framework提供用来适应多种WebSocket引擎的WebSocket API
+
 Currently the list includes WebSocket runtimes such as Tomcat 7.0.47+, Jetty 9.1+,
 GlassFish 4.1+, WebLogic 12.1.3+, and Undertow 1.0+ (and WildFly 8.0+). Additional support
 may be added as more WebSocket runtimes become available.
@@ -202,8 +203,9 @@ directly.
 
 [[websocket-server-handler]]
 ==== 创建并配置一个WebSocketHandler  
-Creating a WebSocket server is as simple as implementing `WebSocketHandler` or more
-likely extending either `TextWebSocketHandler` or `BinaryWebSocketHandler`:
+创建一个WebSocket 服务器就像实现一个 'WebsocketHandler'一样简单,
+或者更像继承'TextWebSocketHandler'或'BinaryWebSocketHandler':
+
 
 [source,java,indent=0]
 [subs="verbatim,quotes"]
@@ -354,10 +356,17 @@ session with status `1011` that indicates a server error.
 
 [[websocket-server-deployment]]
 ==== 部署注意事项
+Spring WebSocket API 可以很方便的继承到那些使用'DispatcherServlet'服务于WebSocket
+握手或者其他http请求的springMVC的应用
+
 The Spring WebSocket API is easy to integrate into a Spring MVC application where
 the `DispatcherServlet` serves both HTTP WebSocket handshake as well as other
-HTTP requests. It is also easy to integrate into other HTTP processing scenarios
-by invoking `WebSocketHttpRequestHandler`. This is convenient and easy to
+HTTP requests. 
+它同样可以很方便的集成到其他的通过调用'WebSocketHttpRequestHandler'来处理Http的情况
+It is also easy to integrate into other HTTP processing scenarios
+by invoking `WebSocketHttpRequestHandler`. 
+这是实用和易懂的.尽管,
+This is convenient and easy to
 understand. However, special considerations apply with regards to JSR-356 runtimes.
 
 The Java WebSocket API (JSR-356) provides two deployment mechanisms. The first
