@@ -486,10 +486,10 @@ or WebSocket XML namespace:
 
 [NOTE]
 ====
-For client side WebSocket configuration, you should use `WebSocketContainerFactoryBean`
-(XML) or `ContainerProvider.getWebSocketContainer()` (Java config).
+对于客户端Websocket的配置来说, 你应该使用 `WebSocketContainerFactoryBean`
+(XML) 或者 `ContainerProvider.getWebSocketContainer()` (Java config).
 ====
-
+对于Jetty来说,你将需要提供一个预设置的 Jetty 'WebSocketServerFactory' 和 
 For Jetty, you'll need to supply a pre-configured Jetty `WebSocketServerFactory` and plug
 that into Spring's `DefaultHandshakeHandler` through your WebSocket Java config:
 
@@ -632,7 +632,7 @@ http://sockjs.github.io/sockjs-protocol/sockjs-protocol-0.3.3.html[narrated test
 
 
 [[websocket-fallback-sockjs-enable]]
-==== Enable SockJS
+==== 启用 SockJS
 SockJS is easy to enable through a configuration:
 
 [source,java,indent=0]
@@ -851,7 +851,7 @@ SockJS endpoint prefix thus letting Spring's SockJsService handle it.
 
 
 [[websocket-fallback-sockjs-client]]
-==== SockJS Client
+==== SockJS 客户端
 
 A SockJS Java client is provided in order to connect to remote SockJS endpoints without
 using a browser. This can be especially useful when there is a need of bidirectional
